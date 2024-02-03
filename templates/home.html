@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>    
+  <style>
+    .container{
+      text-align: center;
+            width: 80%;
+    }
+.patient-info {
+  background-color: #ffffff;
+  padding: 20px 20px 20px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.687);
+  margin-bottom: 20px;
+}
+.btn-blue{
+  background-color: #47aeff;
+}
+.btn-blue:hover{
+  background-color: #bae1ff;
+
+}
+  </style>
+</head>
+<body>
+ 
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container-fluid" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><span style="font-family: brush script mt;color:#47aeff;font-size: 30px;">MedicDiary</span></a>
+        </div>
+    <div class="navbar-right">
+        <div class="collapse navbar-collapse" id="mynav">
+            <ul class="nav navbar-nav">
+                <li  class="nav-item" ><a class="color-me" class="nav-link-active" href="home">HOME</a></li>
+                <li ><a class="color-me" href="#about" >ABOUT</a></li>
+                <li ><a class="color-me" href="upload">UPLOAD</a></li>
+                <li class="dropdown">
+                    <a class="color-me" class="dropdown-toggle" data-toggle="dropdown">ACCOUNT</a>
+                    <ul class="dropdown-menu">
+                        <li ><a class="color-me" href="signup">SIGNUP</a></li>
+                        <li><a class="color-me" href="signin">SIGNIN</a></li>
+                        <li><a class="color-me" href="delete">DELETE USER</a></li>
+                        <li><a class="color-me" href="logout">LOGOUT</a></li>
+                    </ul>
+                </li>
+            </ul>              
+        </div>
+    </div>
+</div>
+</nav>
+
+  <h1 style="padding-top:80px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">MedicDiary-Patient's Record Management System</h1>
+  <img src ="https://image.freepik.com/free-vector/doctors-nurses-team_23-2148497394.jpg" alt="hospital" height=600px; style="display: block; margin: 0 auto;">
+ 
+  <div class="container" id="about">
+    <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">About Us</h2>
+    <div class="patient-info">
+          <p style="font-size: 16px;">Industrial evolution has changed every aspects of life and have affected healthcare industries also.With evlouing industrialsation maintaining helath records was made easier.MedicDiary is website where you can store your health records like scans,prescriptions etc..,You can also see through doctors in nearby by hospitals for emergency.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Visit Our Specialized Doctors</h2>
+    <img src="{% static 'medical-app (2).png' %}"><br><br>
+    <button type="submit" class="btn btn-blue"><a style="text-decoration: none;color: aliceblue;margin-bottom: 40px;"href="doctors">See Doctors</button>
+  </div>
+</body>
+</html>

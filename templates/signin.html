@@ -1,0 +1,134 @@
+{% load static %}
+<html>
+<head>
+  <title>Registration Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+    .container {
+      margin: 80px 60px 20px 60px;
+      padding:10px 20px 5px 50px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }  
+    .form-group {
+      margin-bottom: 20px;
+    }  
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }  
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }  
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }  
+    .form-group button {
+      width: 100px;
+      padding-left: 10px;
+      background-color:#47aeff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .center{
+      display: flex;
+     justify-content: center;
+  align-items: center;
+     }  
+    .form-group button:hover {
+      background-color: black;
+    }
+</style>
+</head>
+<body>
+
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container-fluid" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><span style="font-family: brush script mt;color:#47aeff;font-size: 30px;">MedicDiary</span></a>
+        </div>
+    <div class="navbar-right">
+        <div class="collapse navbar-collapse" id="mynav">
+            <ul class="nav navbar-nav">
+                <li  class="nav-item" ><a class="color-me" class="nav-link-active" href="/">HOME</a></li>
+                <li ><a class="color-me" href="#about" >ABOUT</a></li>
+                <li ><a class="color-me" href="upload">UPLOAD</a></li>
+                <li class="dropdown">
+                    <a class="color-me" class="dropdown-toggle" data-toggle="dropdown">ACCOUNT</a>
+                    <ul class="dropdown-menu">
+                        <li ><a class="color-me" href="signup">SIGNUP</a></li>
+                        <li><a class="color-me" href="signin">SIGNIN</a></li>
+                        <li><a class="color-me" href="logout">LOGOUT</a></li>
+                    </ul>
+                </li>
+            </ul>  
+          </div>
+    </div>
+</nav>
+   
+  <div class="container">
+    <h1>Login</h1>
+    <div>
+      <style>
+        h5{
+            color: red;
+        }
+    </style>
+      {% for message in messages %}
+      <h5>{{message}}</h5>
+      {% endfor %}
+    </div>
+    <form class="form-horizontal" action="" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label class="control-label col-sm-2">Name:</label>
+        <div class="col-sm-6">
+          <input class="form-control" name="username" type="text" placeholder="Name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2"  for="password" >Password:</label>
+        <div class="col-sm-6">
+          <input type="password" id="password" name="password" placeholder="Password"required>
+        </div>
+      </div>
+      <div class="center">
+        <div class="form-group">
+          <button class="form-control" type="submit" class="button">LOGIN</button>
+        </div>
+      </div>
+      <a href="signup" > Not Registered?Register here</a>
+    </form>
+  </div>
+</body>
+</html>
+      
+  
+     
+    
